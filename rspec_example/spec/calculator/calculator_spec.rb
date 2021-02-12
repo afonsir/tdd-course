@@ -4,14 +4,21 @@ require 'calculator'
 
 describe Calculator do
   context '#sum' do
-    it 'use sum method for 2 numbers' do
+    it 'with positive numbers' do
       calc   = Calculator.new
       result = calc.sum(5, 7)
 
       expect(result).to eq(12)
     end
 
-    it 'use sum method for 2 numbers with negative numbers' do
+    it 'with negative numbers' do
+      calc   = Calculator.new
+      result = calc.sum(-5, -7)
+
+      expect(result).to eq(-12)
+    end
+
+    it 'with positive and negative numbers' do
       calc   = Calculator.new
       result = calc.sum(-5, 7)
 
